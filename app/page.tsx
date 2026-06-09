@@ -3,7 +3,6 @@ import React from 'react'
 import Header from './components/headSection'
 import HeaderBottom from './components/headerBottom'
 
-import Catagory from './components/category'
 import { motion } from 'framer-motion'
 
 const page = () => {

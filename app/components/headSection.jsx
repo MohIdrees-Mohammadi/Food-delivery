@@ -1,6 +1,5 @@
 import React from "react";
 import { IoStarOutline } from "react-icons/io5";
-import Image from "next/image";
 import { Star } from 'lucide-react';
 
 
