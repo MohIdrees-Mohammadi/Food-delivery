@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+
+@theme {
+    --color-primary: #111332;
+    --color-secondary: #594ED1;
+}
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+.float-badge {
+  animation: float 3s ease-in-out infinite alternate;
+}
+    
