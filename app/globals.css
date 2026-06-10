@@ -1,9 +1,14 @@
 @import "tailwindcss";
 
 
+
 @theme {
-    --color-primary: #111332;
-    --color-secondary: #594ED1;
+  --color-primary: oklch(45% 0.15 25);
+  --color-forborder: oklch(92% 0.01 60);
+  --color-forbackround: oklch(98.5% 0.005 60);
+  --color-formuted: oklch(95.5% 0.01 60);
+  --text-primary: oklch(45% 0.15 25) --color-primary: #111332;
+  --color-secondary: #594ed1;
 }
 @keyframes float {
   0% {
@@ -18,4 +23,3 @@
 .float-badge {
   animation: float 3s ease-in-out infinite alternate;
 }
-    
