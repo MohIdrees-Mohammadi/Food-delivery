@@ -84,7 +84,7 @@ export default function Home() {
           className="float-badge absolute bottom-[7%] right-[13%] hidden h-10 w-10 rotate-12 rounded-md bg-[#ffd86a] opacity-35 lg:block"
           style={{ animationDelay: "1.4s" }}
         />
-        <div className="mx-auto grid min-h-[calc(100vh-3.5rem)] max-w-7xl items-center gap-12 px-6 py-20 lg:grid-cols-[1fr_0.95fr] lg:px-10">
+        <div className="mx-auto grid min-h-[calc(86vh-3.5rem)] max-w-6xl items-center gap-10 px-6 py-14 lg:grid-cols-[1fr_0.9fr] lg:px-10">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -93,7 +93,7 @@ export default function Home() {
             <motion.span
               variants={fadeUp}
               transition={{ duration: 0.55, ease: "easeOut" }}
-              className="inline-flex items-center gap-2 rounded-full border border-[#e8c1b7] bg-[#f7ded7] px-5 py-3 text-sm font-bold text-[#a51d22]"
+              className="inline-flex items-center gap-2 rounded-full border border-[#e8c1b7] bg-[#f7ded7] px-4 py-2 text-sm font-bold text-[#a51d22]"
             >
               <span className="h-2 w-2 rounded-full bg-[#a51d22]" />
               Delivering across Kabul
@@ -102,7 +102,7 @@ export default function Home() {
             <motion.h1
               variants={fadeUp}
               transition={{ duration: 0.65, ease: "easeOut" }}
-              className="mt-10 max-w-3xl text-5xl font-black leading-[1.04] tracking-normal sm:text-6xl lg:text-7xl"
+              className="mt-7 max-w-2xl text-4xl font-black leading-[1.06] tracking-normal sm:text-5xl lg:text-6xl"
             >
               Order, Track,
               <span className="block text-[#a84746]">and Indulge</span>
@@ -112,7 +112,7 @@ export default function Home() {
             <motion.p
               variants={fadeUp}
               transition={{ duration: 0.65, ease: "easeOut" }}
-              className="mt-6 max-w-xl text-lg leading-8 text-stone-600"
+              className="mt-5 max-w-lg text-base leading-7 text-stone-600"
             >
               The best pizza in Kabul, delivered hot to your door. Fresh
               ingredients, authentic recipes, and lightning-fast delivery.
@@ -121,18 +121,18 @@ export default function Home() {
             <motion.div
               variants={fadeUp}
               transition={{ duration: 0.65, ease: "easeOut" }}
-              className="mt-8 flex flex-wrap gap-4"
+              className="mt-7 flex flex-wrap gap-3"
             >
               <Link
                 href="/menu"
-                className="inline-flex h-14 items-center justify-center gap-3 rounded-full bg-[#a51d22] px-8 text-base font-black text-white shadow-[0_12px_24px_rgba(165,29,34,0.22)] transition hover:bg-[#8f171b]"
+                className="inline-flex h-12 items-center justify-center gap-2.5 rounded-full bg-[#a51d22] px-7 text-sm font-black text-white shadow-[0_12px_24px_rgba(165,29,34,0.22)] transition hover:bg-[#8f171b]"
               >
                 Order Now
                 <ArrowRight className="h-5 w-5" />
               </Link>
               <a
                 href="#contact"
-                className="inline-flex h-14 items-center justify-center rounded-full border border-[#d7b6ae] bg-white/55 px-8 text-base font-black text-[#a51d22] transition hover:bg-white"
+                className="inline-flex h-12 items-center justify-center rounded-full border border-[#d7b6ae] bg-white/55 px-7 text-sm font-black text-[#a51d22] transition hover:border-[#a51d22] hover:bg-[#a51d22] hover:text-white"
               >
                 Contact Us
               </a>
@@ -141,38 +141,29 @@ export default function Home() {
             <motion.div
               variants={fadeUp}
               transition={{ duration: 0.65, ease: "easeOut" }}
-              className="mt-10 grid max-w-xl grid-cols-1 gap-4 sm:grid-cols-3"
+              className="mt-8 grid max-w-lg grid-cols-1 gap-3 sm:grid-cols-3"
             >
-              <motion.div
-                whileHover={{ y: -6 }}
-                className="flex items-center gap-3 rounded-2xl bg-white/80 px-4 py-3 shadow-sm ring-1 ring-white/80 backdrop-blur"
-              >
+              <div className="flex items-center gap-3 rounded-2xl border border-transparent bg-white/80 px-3.5 py-2.5 shadow-sm ring-1 ring-white/80 backdrop-blur transition-colors hover:border-[#a51d22]">
                 <Smile className="h-6 w-6 text-orange-400" />
                 <p className="text-sm leading-tight text-stone-500">
-                  <strong className="block text-lg font-black text-[#1f140f]">2000+</strong>
+                  <strong className="block text-base font-black text-[#1f140f]">2000+</strong>
                   Happy Customers
                 </p>
-              </motion.div>
-              <motion.div
-                whileHover={{ y: -6 }}
-                className="flex items-center gap-3 rounded-2xl bg-white/80 px-4 py-3 shadow-sm ring-1 ring-white/80 backdrop-blur"
-              >
+              </div>
+              <div className="flex items-center gap-3 rounded-2xl border border-transparent bg-white/80 px-3.5 py-2.5 shadow-sm ring-1 ring-white/80 backdrop-blur transition-colors hover:border-[#a51d22]">
                 <Zap className="h-5 w-5 text-orange-500" />
                 <p className="text-sm leading-tight text-stone-500">
-                  <strong className="block text-lg font-black text-[#1f140f]">30min</strong>
+                  <strong className="block text-base font-black text-[#1f140f]">30min</strong>
                   Avg. Delivery
                 </p>
-              </motion.div>
-              <motion.div
-                whileHover={{ y: -6 }}
-                className="flex items-center gap-3 rounded-2xl bg-white/80 px-4 py-3 shadow-sm ring-1 ring-white/80 backdrop-blur"
-              >
+              </div>
+              <div className="flex items-center gap-3 rounded-2xl border border-transparent bg-white/80 px-3.5 py-2.5 shadow-sm ring-1 ring-white/80 backdrop-blur transition-colors hover:border-[#a51d22]">
                 <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 <p className="text-sm leading-tight text-stone-500">
-                  <strong className="block text-lg font-black text-[#1f140f]">4.8</strong>
+                  <strong className="block text-base font-black text-[#1f140f]">4.8</strong>
                   Rating
                 </p>
-              </motion.div>
+              </div>
             </motion.div>
           </motion.div>
 
@@ -180,14 +171,14 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.92, x: 40 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.18 }}
-            className="relative mx-auto aspect-square w-full max-w-[455px] overflow-hidden rounded-[22px] shadow-[0_28px_70px_rgba(91,48,28,0.22)]"
+            className="relative mx-auto aspect-square w-full max-w-[390px] overflow-hidden rounded-[22px] shadow-[0_24px_56px_rgba(91,48,28,0.2)]"
           >
             <Image
               src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?auto=format&fit=crop&w=900&q=85"
               alt="Pepperoni pizza with basil"
               fill
               priority
-              sizes="(min-width: 1024px) 455px, 88vw"
+              sizes="(min-width: 1024px) 390px, 88vw"
               className="object-cover"
             />
           </motion.div>

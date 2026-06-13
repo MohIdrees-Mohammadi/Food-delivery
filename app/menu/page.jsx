@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
+import { motion } from "framer-motion";
 import { MenuCard } from "../components/MenuCard";
 import { EmptyMenuState } from "../components/EmptyMenuState";
 import { menuItems } from "../menuItems";
@@ -27,6 +28,11 @@ const categoryMarks = {
 };
 
 const categories = Object.keys(categoryIcons);
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0 },
+};
 
 export default function MenuPage() {
   const [category, setCategory] = useState("All");
@@ -57,7 +63,13 @@ export default function MenuPage() {
   return (
     <main className="min-h-screen bg-[#fffaf7] text-[#1f140f]">
       <section id="menu" className="mx-auto max-w-7xl px-5 py-12 sm:px-8 lg:py-14">
-        <div className="mx-auto max-w-3xl text-center">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp}
+          transition={{ duration: 0.55, ease: "easeOut" }}
+          className="mx-auto max-w-3xl text-center"
+        >
           <span className="inline-flex items-center gap-2 rounded-full bg-[#f4e6e6] px-4 py-1.5 text-xs font-black uppercase tracking-normal text-[#a51d22]">
             <span>#</span>
             Explore
@@ -82,9 +94,15 @@ export default function MenuPage() {
               className="h-14 w-full rounded-[24px] border border-stone-200 bg-white px-12 text-sm font-medium text-stone-700 shadow-[0_3px_10px_rgba(28,25,23,0.10)] outline-none transition placeholder:text-stone-500 focus:border-[#a51d22]"
             />
           </div>
-        </div>
+        </motion.div>
 
-        <div className="mt-8 flex flex-wrap justify-center gap-3">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp}
+          transition={{ duration: 0.55, delay: 0.1, ease: "easeOut" }}
+          className="mt-8 flex flex-wrap justify-center gap-3"
+        >
           {categories.map((categoryName) => {
             const isActive = categoryName === category;
 
@@ -104,15 +122,27 @@ export default function MenuPage() {
               </button>
             );
           })}
-        </div>
+        </motion.div>
 
         {filteredMenuItems.length === 0 ? (
           <EmptyMenuState search={search.trim() || category} />
         ) : (
           <div className="mt-10 space-y-12">
             {visibleCategories.map((menuSection) => (
-              <section key={menuSection.name} id={menuSection.name.toLowerCase()} className="scroll-mt-20">
-                <div className="mb-6 flex items-center gap-4">
+              <motion.section
+                key={menuSection.name}
+                id={menuSection.name.toLowerCase()}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.18 }}
+                transition={{ staggerChildren: 0.08 }}
+                className="scroll-mt-20"
+              >
+                <motion.div
+                  variants={fadeUp}
+                  transition={{ duration: 0.45, ease: "easeOut" }}
+                  className="mb-6 flex items-center gap-4"
+                >
                   <div className="grid h-12 w-12 place-items-center rounded-2xl bg-[#f4e6e6] text-xl">
                     {categoryMarks[menuSection.name]}
                   </div>
@@ -122,14 +152,20 @@ export default function MenuPage() {
                       {menuSection.items.length} {menuSection.items.length === 1 ? "item" : "items"}
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                   {menuSection.items.map((item) => (
-                    <MenuCard key={item.id} item={item} />
+                    <motion.div
+                      key={item.id}
+                      variants={fadeUp}
+                      transition={{ duration: 0.5, ease: "easeOut" }}
+                    >
+                      <MenuCard item={item} />
+                    </motion.div>
                   ))}
                 </div>
-              </section>
+              </motion.section>
             ))}
           </div>
         )}
