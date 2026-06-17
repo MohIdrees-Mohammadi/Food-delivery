@@ -20,7 +20,7 @@ export default function ProductDetails() {
 
   return (
     <>
-      <section className="max-w-3xl max-h-screen mx-auto px-4 py-10  ">
+      <section className="max-w-3xl max-h-auto mx-auto px-4 py-10  ">
 
         {/* Back Button */}
         <Link
@@ -30,10 +30,10 @@ export default function ProductDetails() {
           ← Back to Menu
         </Link>
 
-        <div className="grid lg:grid-cols-2 gap-10">
+        <div className="grid lg:grid-cols-2 gap-5">
 
           {/* Image */}
-          <div className="relative">
+          <div className=" ">
 
             <span className="absolute top-5 left-5 bg-red-700 text-white px-5 py-2 rounded-full font-semibold z-10">
               NEW
@@ -43,7 +43,7 @@ export default function ProductDetails() {
               alt={currentpizza.name}
               width={500}
               height={500}
-              className="rounded-[30px] w-full h-auto object-cover"
+              className="rounded-[30px] w-full h-80 lg:h-105 object-cover "
             />
 
           </div>
@@ -119,37 +119,37 @@ export default function ProductDetails() {
             {/* Quantity + Cart */}
             <div className="flex flex-col md:flex-row gap-2 mb-3">
 
-              <div className="flex items-center border rounded-full lg:w-30 lg:h-8 ">
 
-                <div className="flex items-center border rounded-full lg:w-30 lg:h-8">
 
-                  <button
-                    onClick={() =>
-                      quantity > 1 && setQuantity(quantity - 1)
-                    }
-                    className="px-3 py-4 text-sm"
-                  >
-                    -
-                  </button>
+              <div className="flex items-center border rounded-full lg:w-25 lg:h-8">
 
-                  <span className="px-3 text-sm font-semibold">
-                    {quantity}
-                  </span>
+                <button
+                  onClick={() =>
+                    quantity > 1 && setQuantity(quantity - 1)
+                  }
+                  className="px-3 py-4 text-sm"
+                >
+                  -
+                </button>
 
-                  <button
-                    onClick={() =>
-                      setQuantity(quantity + 1)
-                    }
-                    className="px-3 py-4 text-sm"
-                  >
-                    +
-                  </button>
+                <span className="px-3 text-sm font-semibold">
+                  {quantity}
+                </span>
 
-                </div>
+                <button
+                  onClick={() =>
+                    setQuantity(quantity + 1)
+                  }
+                  className="px-3 py-4 text-sm"
+                >
+                  +
+                </button>
 
               </div>
 
-              <button className="bg-red-700 text-white py-1 rounded-full font-semibold lg:w-100 lg:h-10 text-sm">
+
+
+              <button className="bg-red-700 text-white py-1 rounded-full font-semibold h-15 lg:w-100 lg:h-10 text-sm">
                 🛒 Add to Cart — {totalPrice} AFN
               </button>
             </div>
