@@ -41,7 +41,7 @@ export default function Home() {
     .filter((menuSection) => menuSection.items.length > 0);
 
   return (
-    <div className="min-h-screen bg-[#fff8ed] text-stone-950">
+    <div className="min-h-screen  text-stone-950">
       {/* Header section */}
       {/* <header className="border-b border-stone-200 bg-white/90">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8">

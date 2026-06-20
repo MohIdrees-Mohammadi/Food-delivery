@@ -11,7 +11,7 @@ export function MenuCard({ item }) {
   const itemHref = `/menu/${item.id}`;
 
   return (
-    <article className="group overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-[0_3px_10px_rgba(28,25,23,0.14)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_18px_rgba(28,25,23,0.16)]">
+    <article className="group overflow-hidden rounded-2xl border border-stone-200  shadow-[0_3px_10px_rgba(28,25,23,0.14)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_18px_rgba(28,25,23,0.16)]">
       <Link href={itemHref} className="block">
         <div className="relative aspect-[1.45] overflow-hidden bg-stone-100">
           <Image src={item.image} alt={item.name} fill sizes="(min-width: 1280px) 25vw, (min-width: 768px) 33vw, 100vw"
